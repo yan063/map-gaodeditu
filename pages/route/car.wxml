@@ -1,0 +1,52 @@
+<!--pages/route/car.wxml-->
+
+<view class="page">
+    <view class="page_bd" style="height: 100%;">
+        <view class="weui-tab">
+            <view class="weui-tab_pannel">
+                <!-- 地图导航 -->
+                <view class="map_box" style="bottom: {{listHeight}}">
+                    <map class="map" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" scale="13" markers="{{markers}}" polyline="{{polyline}}"></map>
+                </view>
+
+                <!-- 文本导航 -->
+                <view class="text_box" style="height: {{listHeight}}">
+                    <view class="text">{{distance}} {{duration}}</view>
+                    <view class="detail_button" bindtap="checkDetail">详情</view>
+
+                    <view class="weui-panel weui-panel_access" wx:if="{{listShowed}}">
+                        <view class="weui-panel__bd" wx:for="{{steps}}" wx:key="index">
+                            <view class="weui-media-box weui-media-box_text">
+                                <view class="weui-media-box__desc">{{index+1}}. {{item.instruction}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                
+                <!-- 顶部导航 -->
+                <view class="weui-tabbar">
+                    <view class="weui-tabbar__item {{activeTab=='car' ? 'weui-bar__item_on' : ''}}" bindtap="changeNav" data-type="car">
+                        <image src="../../static/images/car-active.png" alt class="weui-tabbar__icon"></image>
+                        <view class="weui-tabbar__label">驾车</view>
+                    </view>
+                    <view class="weui-tabbar__item {{activeTab=='walk' ? 'weui-bar__item_on' : ''}}" bindtap="changeNav" data-type="walk">
+                     <image src="{{activeTab == 'walk' ? '../../static/images/walk-active.png' : '../../static/images/walk.png'}}" alt class="weui-tabbar__icon"></image>                      
+                        <view class="weui-tabbar__label">步行</view>
+                    </view>
+                    <view class="weui-tabbar__item {{activeTab=='bus' ? 'weui-bar__item_on' : ''}}" bindtap="changeNav" data-type="bus">
+                        <image src="{{activeTab == 'bus' ? '../../static/images/bus-active.png' : '../../static/images/bus.png'}}" alt class="weui-tabbar__icon"></image>
+                        <view class="weui-tabbar__label">公交</view>
+                    </view>
+                    <view class="weui-tabbar__item {{activeTab=='bike' ? 'weui-bar__item_on' : ''}}" bindtap="changeNav" data-type="bike">
+                        <image src="{{activeTab == 'bike' ? '../../static/images/bike-active.png' : '../../static/images/bike.png'}}" alt class="weui-tabbar__icon"></image>
+                        <view class="weui-tabbar__label">骑行</view>
+                    </view>
+                    <!-- <view wx:for="{{routeTab}}" wx:key="type" class="weui-tabbar__item {{activeTab==item.type ? 'weui-bar__item_on' : ''}}" bindtap="changeNav" data-type="{{item.type}}">
+                        <image src="{{activeTab == item.type ? item.activeIcon : item.icon}}" alt class="weui-tabbar__icon"></image>
+                        <view class="weui-tabbar__label">{{item.text}}</view>
+                    </view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

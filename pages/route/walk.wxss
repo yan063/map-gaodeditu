@@ -1,0 +1,40 @@
+/* pages/route/walk.wxss */
+.weui-tabbar{
+    position: fixed;
+    top: 0; /* 修改这里 */
+    left: 0;
+    right: 0;
+    background: #3df;
+  }
+.map {
+    width: 100%;
+    height: 100vh;
+  }   
+  .map_box {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .text_box {
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #fff;
+  }
+  .text_box .text{
+    margin: 10px;
+  }  
+  .detail_button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 3px 5px;
+    color: #fff;
+    background: #0091ff;
+    width:50px;
+    text-align:center;
+    border-radius:5px;
+    z-index: 999;
+  }
+

@@ -1,0 +1,70 @@
+<!--pages/pweather/index.wxml-->
+<view class="weui-grids">
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="美食">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">美食</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="酒店">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">酒店</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="加油站">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">加油站</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="银行">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">银行</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="地铁">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">地铁</view>
+		</navigator>
+		<navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="公交站">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">公交站</view>
+		</navigator>
+        <navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="医院">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">医院</view>
+		</navigator>
+        <navigator class="weui-grid" aria-role="button" url="javascript:" bindtap="doSeach" data-keyword="公园">
+			<view class="weui-grid__icon">
+				<image src="{{icon}}" alt></image>
+			</view>
+			<view class="weui-grid__label">公园</view>
+		</navigator>	
+	</view>
+<view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">未来3天的天气</view>
+    <view class="weui-panel__bd" >
+        <navigator aria-labelledby="js_p1m1_bd" class="weui-media-box weui-media-box_appmsg" url="javascript:" wx:for="{{threedays}}" wx:key="index">
+            <view aria-hidden="true" class="weui-media-box__hd">
+                <image class="weui-media-box__thumb" src="../../static/qweather-icons/icons/{{item.iconDay}}.svg" alt></image>
+            </view>
+            <view aria-hidden="true" id="js_p1m1_bd" class="weui-media-box__bd">
+                <text class="weui-media-box__title">{{item.fxDate}}</text>
+                <view class="weui-media-box__desc">温度：{{item.tempMin}} - {{item.tempMax}}</view>
+          <view class="weui-media-box__desc">风向：{{item.windDirDay}}； 风力：{{item.windScaleDay}} 级</view>
+            </view>
+        </navigator>
+
+    </view>
+</view>
+<!--引入模板 -->
+<import src="../../tpl/footer.wxml"></import>
+<template is="my-footer"></template>

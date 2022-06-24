@@ -1,0 +1,8 @@
+/* pages/shouye/index.wxss */
+.swiper-view {
+    margin: 10px;
+  }
+  .slide-image {
+    width: 100%;
+    height: 150px;
+  }

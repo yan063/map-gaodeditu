@@ -1,0 +1,8 @@
+<!--pages/pweather/map.wxml-->
+<view class="page">
+    <map class="map" id="myMap" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" show-location   bindmarkertap="markertap"></map>
+    <view class="map-text"  >
+        <text>{{textData.name}},</text>
+        <text>{{textData.address}}</text>
+    </view>
+</view>
